@@ -1,0 +1,14 @@
+.b-logo {
+  max-width: 250px;
+
+  & img {
+    display: block;
+    width: 100%;
+  }
+  @include md {
+    max-width: 180px;
+  }
+  @include xs {
+    max-width: 140px;
+  }
+}
