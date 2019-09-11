@@ -1,26 +1,50 @@
 .b-title {
-  font-weight: 700;
+    font-weight: 300;
 }
+
 .b-title_light {
-  color: $lightColor;
+    color: $lightColor;
 }
+
 .b-title_dark {
-  color: $darkColor;
+    color: $darkColor;
 }
+
 .b-title_big {
-  @include fz(48px, 60px);
+    @include fz(48px, 60px);
 }
+
 .b-title_norm {
-  @include fz(30px, 36px);
+    @include fz(36px, 40px);
 }
-.b-title_small {
-}
+
+.b-title_small {}
+
 .b-title_italic {
-  font-style: italic;
+    font-style: italic;
 }
+
 .b-title_center {
-  text-align: center;
+    text-align: center;
 }
+
 .b-title_right {
-  text-align: right;
+    text-align: right;
+}
+
+.b-title__value {
+    display: inline-block;
+    position: relative;
+    @include before(attr(data-bg-txt)) {
+        position: absolute;
+        left: -8px;
+        bottom: 0;
+        @include fz(200px, 158px);
+        font-weight: 900;
+        color: #000;
+        opacity: 0.2;
+        user-select: none;
+        pointer-events: none;
+        z-index: 0;
+    }
 }

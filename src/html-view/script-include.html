@@ -8,7 +8,7 @@
 <script src="./assets/js/main.js"></script>
 
 <script>
-    jQuery(document).ready(function ($) {
+    jQuery(document).ready(function($) {
 
         var tabs = new TABS({
             trigger: $('[data-tab-trigger]'), // jQuery.object
@@ -22,7 +22,7 @@
             for (var i = 0; i < $('.b-form').length; i++) {
                 $('.b-form').eq(i).materialForm();
                 $('.b-form').eq(i).validate({
-                    errorPlacement: function (error, element) { }
+                    errorPlacement: function(error, element) {}
                 });
             }
         }
@@ -39,33 +39,50 @@
                         slidesToScroll: 1,
                         prevArrow: $('[data-first-slider-arrow-prew').eq(i),
                         nextArrow: $('[data-first-slider-arrow-next').eq(i),
-                        responsive: [
-                            {
-                                breakpoint: 1170,
-                                settings: {
-                                    slidesToShow: 2,
-                                }
-                            },
-                            {
-                                breakpoint: 780,
-                                settings: {
-                                    slidesToShow: 1,
-                                }
-                            },
-                            {
-                                breakpoint: 560,
-                                settings: {
-                                    slidesToShow: 1,
-                                    arrow: false
-                                }
+                        responsive: [{
+                            breakpoint: 1170,
+                            settings: {
+                                slidesToShow: 2,
                             }
-                        ]
+                        }, {
+                            breakpoint: 780,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        }, {
+                            breakpoint: 560,
+                            settings: {
+                                slidesToShow: 1,
+                                arrow: false
+                            }
+                        }]
                     });
                 }
             }
         }
         initSliders()
-        // --- Инициализация слайдеров slick-slider ---
+            // --- Инициализация слайдеров slick-slider ---
+
+        var bgImagesSrc = [
+            './assets/img/cover/bg.jpg',
+            'https://www.fotor.com/loopBannerImg/indexBannerImg/banner-02.jpg',
+            'https://www.fotor.com/loopBannerImg/indexBannerImg/banner-03.jpg',
+            'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1551890869%2FGettyImages-651795518.jpg%3Fitok%3DvlBT9eFw&q=85',
+            'https://clicklikethis.com/wp-content/uploads/2016/11/gopro-photography-tips.jpg',
+            'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1551890869%2FGettyImages-651795518.jpg%3Fitok%3DvlBT9eFw&q=85',
+            'https://www.bookmestatic.net.nz/images/activities/1281_image1_dive%204.jpg'
+        ]
+        let bgAnim = new ScrollBlockAnimBg()
+        bgAnim.init(bgImagesSrc[0])
+
+        $(window).on('scroll', function() {
+            var index = parseInt($(window).scrollTop() / 1000)
+            if (newIndex != index) {
+                bgAnim.next(bgImagesSrc[index])
+            }
+            var newIndex = index
+        })
+
     })
 </script>
 </body>

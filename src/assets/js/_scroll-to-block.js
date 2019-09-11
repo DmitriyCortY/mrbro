@@ -1,45 +1,31 @@
-/*
-
-new ScrollToBlock({
-    trigger: '[data-scroll-to-block-trigger]',
-    anchor: '[data-scroll-to-block-anchor]',
-    offset: $(window).height() / 2
-})
-
-*/
 class ScrollToBlock {
-	constructor(config) {
+    constructor() {
+        this.offset = 0
+        this.speed = 1000
+        this.place = $('html, body')
 
-		this.trigger = $(config.trigger)
-		this.anchor = $(config.anchor)
-		this.offset = config.offset || 0
-		this.speed = config.speed || 600
-		this.place = $('html')
+        this.callHandler()
+    }
 
-		this.callHandler()
-	}
+    callHandler() {
 
-	callHandler() {
+        $('a[href*=\\#]:not([href=\\#])').bind("click", (e) => {
+            e.preventDefault();
+            let anchor = $(e.target)
+            this.scroll(anchor)
+        });
+    }
 
-		this.trigger.on('click', () => {
+    scroll(anchor) {
+        this.place.stop().animate({
+            scrollTop: this.calcPosition(anchor)
+        }, this.speed)
+    }
 
-			event.preventDefault()
-			this.scroll()
-		})
-	}
-
-	scroll() {
-
-		this.place.animate({
-
-			scrollTop: this.calcPosition(this)
-		}, this.speed)
-	}
-
-	calcPosition() {
-
-		let anchorOffsetTop = this.anchor.eq(0).offset().top
-		let calc = anchorOffsetTop - this.offset
-		return calc
-	}
+    calcPosition(anchor) {
+        let anchorOffsetTop = $(anchor.attr('href')).offset().top
+        return (anchorOffsetTop - this.offset)
+    }
 }
+
+new ScrollToBlock()

@@ -1,7 +1,150 @@
-.b-cover-section{
+.b-cover {
+    position: relative;
+    @include flex-colm;
+}
+
+.b-cover__header {
     position: relative;
 }
-.b-cover-section__inner{
+
+.b-cover__content {
     position: relative;
-    @include wrapper();
+    margin-top: 190px;
+}
+
+.b-cover__content_small {
+    max-width: 890px;
+    width: 100%;
+}
+
+.b-cover__content_center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b-cover__footer {
+    position: relative;
+    margin-top: 190px;
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b-cover__logo {
+    margin-bottom: 80px;
+}
+
+.b-cover__menu {
+    display: block;
+}
+
+.b-cover__menu_center {
+    & ul {
+        @include flex-row;
+        @include flex-center;
+    }
+}
+
+.b-cover__row {
+    position: relative;
+}
+
+.b-cover__row_flex {
+    @include flex-row;
+}
+
+.b-cover__row_ai-end {
+    align-items: flex-end;
+}
+
+.b-cover__row_misus-p {
+    @include row;
+}
+
+.b-cover__row_ai-start {
+    align-items: flex-start;
+}
+
+.b-cover__title {
+    margin-right: 15px;
+}
+
+.b-cover__button {
+    max-width: 430px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+}
+
+.b-cover__footer-col {
+    @include col(3);
+    @include col-md(4);
+    position: relative;
+    &:first-child {
+        margin-right: auto;
+    }
+    &:hover {
+        & .b-cover__footer-separator {
+            width: 60px;
+        }
+        & .b-cover__footer-title {
+            color: #f2e9a6;
+        }
+    }
+}
+
+.b-cover__footer-title {
+    @include fz(18px, 20px);
+    margin-bottom: 14px;
+    color: #fefefe;
+    transition: $transition;
+}
+
+.b-cover__footer-separator {
+    background: linear-gradient(to left, #998349, #f2e9a6);
+    height: 1px;
+    width: 40px;
+    margin-bottom: 14px;
+    transition: $transition;
+}
+
+.b-cover__footer-text {
+    color: #fefefe;
+    @include fz(14px, 26px);
+    & p {
+        @include inh;
+        margin: 0;
+    }
+    & a {
+        @include inh;
+        display: block;
+        &:hover {
+            transform: translate3d(2px, 0, 0);
+            color: #f2e9a6;
+        }
+    }
+}
+
+.b-cover__socials {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(-100%, -50%, 0);
+    padding: 30px;
+    @include flex-colm;
+}
+
+.b-cover__social {
+    display: block;
+    color: #f2e9a6;
+    @include fz(30px, 30px);
+    opacity: 0.2;
+    &:hover {
+        transform: translate3d(0, -2px, 0);
+        opacity: 1;
+    }
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
 }

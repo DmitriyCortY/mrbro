@@ -18,9 +18,14 @@
 
 .b-page {
     background-color: #161616;
+    color: $lightColor;
 }
 
-a,
+a {
+    text-decoration: none;
+    transition: $transition;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -51,8 +56,8 @@ a:active {
 }
 
 ::selection {
-    background-color: $darkColor;
-    color: $lightColor;
+    background-color: $lightColor;
+    color: $darkColor;
 }
 
 .material-input input {

@@ -1,77 +1,99 @@
 .b-section {
-  position: relative;
+    position: relative;
 }
+
 .b-section__bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
+
+.b-section_100vh {
+    min-height: 100vh;
+}
+
+.b-section_center {
+    @include flex-row;
+    @include flex-center;
+}
+
 .b-section_padding-small {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
 .b-section_padding-norm {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  @include md {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-  @include sm {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-  @include xs {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @include md {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    @include sm {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include xs {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
-.b-section_padding-big {
-}
+
+.b-section_padding-big {}
+
 .b-section__inner {
-  position: relative;
-  @include wrapper;
+    position: relative;
+    @include wrapper;
 }
+
 .b-section__content {
-  position: relative;
-  @include flex-colm;
-  & p:not(:last-of-type) {
-    margin-bottom: 30px;
-  }
+    position: relative;
+    @include flex-colm;
+    // & p:not(:last-of-type) {
+    //     margin-bottom: 30px;
+    // }
 }
+
 .b-section__title {
-  margin-bottom: 40px;
-  @include lg {
-    margin-bottom: 30px;
-  }
-  @include md {
-    margin-bottom: 20px;
-  }
+    margin-bottom: 40px;
+    @include lg {
+        margin-bottom: 30px;
+    }
+    @include md {
+        margin-bottom: 20px;
+    }
 }
+
 .b-section__separator {
-  @extend .b-section__title;
+    @extend .b-section__title;
 }
+
 .b-section__row {
-  @include flex-row;
-  &:not(:last-of-type) {
-    margin-bottom: 30px;
-  }
+    @include flex-row;
+    &:not(:last-of-type) {
+        margin-bottom: 30px;
+    }
 }
+
 .b-section__row_with-cols {
-  margin-left: -15px;
-  margin-right: -15px;
-  width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
 }
+
 .b-section__col {
-  @include col(12);
-  &_6 {
-    @include col(6);
-  }
+    @include col(12);
+    &_6 {
+        @include col(6);
+    }
 }
+
 .b-section__form {
-  margin-top: 15px;
-  margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
