@@ -18,14 +18,60 @@
     @include fz(36px, 40px);
 }
 
+.b-title_bold {
+    font-weight: 700;
+}
+
+.b-title_yellow {
+    color: #f2e9a6;
+}
+
+.b-title_bg-txt-big {
+    & .b-title__value {
+        &:before {
+            @include fz(200px, 158px);
+        }
+    }
+}
+
+.b-title_bg-txt-norm {
+    & .b-title__value {
+        &:before {
+            @include fz(170px, 132px);
+        }
+    }
+}
+
+.b-title_bg-txt-small {
+    & .b-title__value {
+        &:before {
+            @include fz(145px, 132px);
+        }
+    }
+}
+
 .b-title_small {}
 
 .b-title_italic {
     font-style: italic;
 }
 
+.b-title_anim {
+    & .b-title__value {
+        &:before {
+            color: rgba(#fafafa, 0.2);
+        }
+    }
+}
+
 .b-title_center {
     text-align: center;
+    & .b-title__value {
+        &:before {
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
 }
 
 .b-title_right {
@@ -35,16 +81,30 @@
 .b-title__value {
     display: inline-block;
     position: relative;
+    z-index: 1;
     @include before(attr(data-bg-txt)) {
         position: absolute;
         left: -8px;
         bottom: 0;
-        @include fz(200px, 158px);
         font-weight: 900;
         color: #000;
         opacity: 0.2;
         user-select: none;
         pointer-events: none;
-        z-index: 0;
+        z-index: -1;
+        white-space: nowrap;
+        transition: $transition;
+    }
+}
+
+.b-title__value_underline {
+    margin-bottom: 80px;
+    @include after() {
+        position: absolute;
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(to left, #998349, #f2e9a6);
+        left: 0;
+        bottom: -40px;
     }
 }

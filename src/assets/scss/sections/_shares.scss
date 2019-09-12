@@ -1,0 +1,15 @@
+.b-shares {
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b-shares__content {
+    position: relative;
+}
+
+.b-shares__slider {
+    @include col(9);
+    @include offset-left(1);
+}

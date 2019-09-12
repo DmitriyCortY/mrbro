@@ -1,0 +1,19 @@
+.b-services {}
+
+.b-services__contetn {}
+
+.b-services__title {}
+
+.b-services__list {
+    @include flex-row;
+    @include row;
+}
+
+.b-services__item {
+    margin: 15px;
+    width: calc(((100% / 10) * 2) - 30px);
+    @include col-md(4);
+    @include col-sm(6);
+    @include col-xs(10);
+    @include col-mobile(12);
+}

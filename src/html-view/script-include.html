@@ -35,27 +35,28 @@
                 for (var i = 0; i < $('[data-first-slider-list]').length; i++) {
                     $('[data-first-slider-list').eq(i).slick({
                         infinite: false,
-                        slidesToShow: 3,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
+                        vertical: true,
                         prevArrow: $('[data-first-slider-arrow-prew').eq(i),
                         nextArrow: $('[data-first-slider-arrow-next').eq(i),
-                        responsive: [{
-                            breakpoint: 1170,
-                            settings: {
-                                slidesToShow: 2,
-                            }
-                        }, {
-                            breakpoint: 780,
-                            settings: {
-                                slidesToShow: 1,
-                            }
-                        }, {
-                            breakpoint: 560,
-                            settings: {
-                                slidesToShow: 1,
-                                arrow: false
-                            }
-                        }]
+                        // responsive: [{
+                        //     breakpoint: 1170,
+                        //     settings: {
+                        //         slidesToShow: 2,
+                        //     }
+                        // }, {
+                        //     breakpoint: 780,
+                        //     settings: {
+                        //         slidesToShow: 1,
+                        //     }
+                        // }, {
+                        //     breakpoint: 560,
+                        //     settings: {
+                        //         slidesToShow: 1,
+                        //         arrow: false
+                        //     }
+                        // }]
                     });
                 }
             }
@@ -65,23 +66,21 @@
 
         var bgImagesSrc = [
             './assets/img/cover/bg.jpg',
-            'https://www.fotor.com/loopBannerImg/indexBannerImg/banner-02.jpg',
-            'https://www.fotor.com/loopBannerImg/indexBannerImg/banner-03.jpg',
-            'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1551890869%2FGettyImages-651795518.jpg%3Fitok%3DvlBT9eFw&q=85',
-            'https://clicklikethis.com/wp-content/uploads/2016/11/gopro-photography-tips.jpg',
-            'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1551890869%2FGettyImages-651795518.jpg%3Fitok%3DvlBT9eFw&q=85',
-            'https://www.bookmestatic.net.nz/images/activities/1281_image1_dive%204.jpg'
+            './assets/img/salam/bg.jpg',
+            './assets/img/advantages/bg.jpg'
         ]
+
         let bgAnim = new ScrollBlockAnimBg()
         bgAnim.init(bgImagesSrc[0])
-
-        $(window).on('scroll', function() {
-            var index = parseInt($(window).scrollTop() / 1000)
-            if (newIndex != index) {
-                bgAnim.next(bgImagesSrc[index])
+        var _c_ = 0
+        setInterval(function() {
+            bgAnim.next(bgImagesSrc[_c_])
+            if (_c_ < bgImagesSrc.length) {
+                _c_++
+            } else {
+                _c_ = 0
             }
-            var newIndex = index
-        })
+        }, 4000)
 
     })
 </script>

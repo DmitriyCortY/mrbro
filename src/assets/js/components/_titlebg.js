@@ -26,6 +26,7 @@ class TitleBgTextAnim {
         }
     }
     typedText() {
+        this.title.parent().addClass('b-title_anim')
         this.title.attr('data-bg-txt', '')
         let interval = setInterval(e => {
             if (this.count < this.length) {
@@ -33,6 +34,7 @@ class TitleBgTextAnim {
                 this.count++;
             } else {
                 clearInterval(interval)
+                this.title.parent().removeClass('b-title_anim')
             }
         }, this.step)
     }
@@ -51,7 +53,7 @@ class TitleBgTextAnim {
 if ($('[data-bg-txt]').length > 0) {
     for (let i = 0; i < $('[data-bg-txt]').length; i++) {
         new TitleBgTextAnim({
-            item: $('[data-bg-txt]').eq(0)
+            item: $('[data-bg-txt]').eq(i)
         })
     }
 }

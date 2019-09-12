@@ -1,0 +1,36 @@
+.b-advantages {}
+
+.b-advantages__content {}
+
+.b-advantages__title {}
+
+.b-advantages__list {
+    @include flex-row;
+    @include row;
+}
+
+.b-advantages__item {
+    margin: 15px;
+    width: calc(((100% / 10) * 2) - 30px);
+    @include col-md(4);
+    @include col-sm(6);
+    @include col-xs(10);
+    @include col-mobile(12);
+}
+
+.b-advantages__item-icon {
+    max-height: 73px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.b-advantages__item-title {
+    font-weight: 500;
+    @include fz(15px, 18px);
+    margin-bottom: 15px;
+}
+
+.b-advantages__item-desc {
+    font-weight: 100;
+    @include fz(14px, 20px);
+}

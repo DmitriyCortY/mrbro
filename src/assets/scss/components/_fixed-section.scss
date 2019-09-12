@@ -207,6 +207,122 @@
     position: absolute;
     height: 100%;
     perspective: 1000px;
+    &:nth-child(1) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 0);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 0) 50%;
+        }
+        @include lg {
+            width: calc(100vw / 4);
+            left: calc((100% / 4) * 0);
+            & .b-fixed-bg__item-inner {
+                background-position: calc((-100vw / 4) * 0) 50%;
+            }
+        }
+        @include sm {
+            width: calc(100% / 2);
+            left: calc((100% / 2) * 0);
+            & .b-fixed-bg__item-inner {
+                background-position: calc((-100vw / 2) * 0) 50%;
+            }
+        }
+    }
+    &:nth-child(2) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 1);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 1) 50%;
+        }
+        @include lg {
+            width: calc(100vw / 4);
+            left: calc((100% / 4) * 1);
+            & .b-fixed-bg__item-inner {
+                background-position: calc((-100vw / 4) * 1) 50%;
+            }
+        }
+        @include sm {
+            width: calc(100% / 2);
+            left: calc((100% / 2) * 1);
+            & .b-fixed-bg__item-inner {
+                background-position: calc((-100vw / 2) * 1) 50%;
+            }
+        }
+    }
+    &:nth-child(3) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 2);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 2) 50%;
+        }
+        @include lg {
+            width: calc(100vw / 4);
+            left: calc((100% / 4) * 2);
+            & .b-fixed-bg__item-inner {
+                background-position: calc((-100vw / 4) * 2) 50%;
+            }
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &:nth-child(4) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 3);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 3) 50%;
+        }
+        @include lg {
+            width: calc(100vw / 4);
+            left: calc((100% / 4) * 3);
+            & .b-fixed-bg__item-inner {
+                background-position: calc((-100vw / 4) * 3) 50%;
+            }
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &:nth-child(5) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 4);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 4) 50%;
+        }
+        @include lg {
+            display: none;
+        }
+    }
+    &:nth-child(6) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 5);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 5) 50%;
+        }
+        @include lg {
+            display: none;
+        }
+    }
+    &:nth-child(7) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 6);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 6) 50%;
+        }
+        @include lg {
+            display: none;
+        }
+    }
+    &:nth-child(8) {
+        width: calc((100vw / 8));
+        left: calc((100% / 8) * 7);
+        & .b-fixed-bg__item-inner {
+            background-position: calc((-100vw / 8) * 7) 50%;
+        }
+        @include lg {
+            display: none;
+        }
+    }
 }
 
 .b-fixed-bg__item-inner {
@@ -217,7 +333,7 @@
     background-repeat: no-repeat;
     @include to(1330px) {
         background-size: cover;
-        background-position: cover;
+        background-position: center;
     }
 }
 
@@ -235,4 +351,55 @@
     top: 50%;
     transform: translate3d(0, -50%, 0);
     opacity: 0.1;
+    &:nth-child(1) {
+        left: calc((100% / 8) * 1);
+        @include lg {
+            left: calc((100% / 4) * 1);
+        }
+        @include sm {
+            left: calc(100% / 2);
+        }
+    }
+    &:nth-child(2) {
+        left: calc((100% / 8) * 2);
+        @include lg {
+            left: calc((100% / 4) * 2);
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &:nth-child(3) {
+        left: calc((100% / 8) * 3);
+        @include lg {
+            left: calc((100% / 4) * 3);
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &:nth-child(4) {
+        left: calc((100% / 8) * 4);
+        @include lg {
+            display: none;
+        }
+    }
+    &:nth-child(5) {
+        left: calc((100% / 8) * 5);
+        @include lg {
+            display: none;
+        }
+    }
+    &:nth-child(6) {
+        left: calc((100% / 8) * 6);
+        @include lg {
+            display: none;
+        }
+    }
+    &:nth-child(7) {
+        left: calc((100% / 8) * 7);
+        @include lg {
+            display: none;
+        }
+    }
 }

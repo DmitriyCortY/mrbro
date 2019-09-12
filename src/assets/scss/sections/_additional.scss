@@ -1,0 +1,17 @@
+.b-additional {}
+
+.b-additional__contetn {}
+
+.b-additional__title {}
+
+.b-additional__list {
+    @include flex-row;
+    @include row;
+}
+
+.b-additional__item {
+    @include col(3);
+    @include col-sm(6);
+    @include col-xs(10);
+    @include col-mobile(12);
+}

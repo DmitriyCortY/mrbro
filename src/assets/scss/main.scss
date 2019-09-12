@@ -46,17 +46,17 @@ a:active {
      ::-webkit-scrollbar {
         width: 5px;
         height: 5px;
-        background-color: $lightColor;
+        background-color: $darkColor;
         border-radius: 2px;
     }
      ::-webkit-scrollbar-thumb {
-        background: $greenColor;
+        background: #F5E9A4;
         border-radius: 2px;
     }
 }
 
 ::selection {
-    background-color: $lightColor;
+    background-color: #F5E9A4;
     color: $darkColor;
 }
 
