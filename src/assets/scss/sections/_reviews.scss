@@ -1,0 +1,22 @@
+.b-reviews {
+    max-width: 1045px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b-reviews__content {}
+
+.b-reviews__title {}
+
+.b-reviews__slider {
+    margin-bottom: 30px;
+}
+
+.b-reviews__button {
+    width: 420px;
+    display: block;
+    @include sm {
+        width: 100%;
+    }
+}

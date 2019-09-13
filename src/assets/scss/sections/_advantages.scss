@@ -1,5 +1,11 @@
 .b-advantages {}
 
+.b-advantages_small {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .b-advantages__content {}
 
 .b-advantages__title {}
@@ -15,6 +21,22 @@
     @include col-md(4);
     @include col-sm(6);
     @include col-xs(10);
+    @include xs {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include col-mobile(12);
+}
+
+.b-advantages__item_small {
+    @include col(3);
+    @include col-md(4);
+    @include col-sm(6);
+    @include col-xs(10);
+    @include xs {
+        margin-left: auto;
+        margin-right: auto;
+    }
     @include col-mobile(12);
 }
 
@@ -22,15 +44,26 @@
     max-height: 73px;
     width: auto;
     margin-bottom: 25px;
+    @include xs {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .b-advantages__item-title {
     font-weight: 500;
     @include fz(15px, 18px);
     margin-bottom: 15px;
+    @include xs {
+        text-align: center;
+    }
 }
 
 .b-advantages__item-desc {
     font-weight: 100;
     @include fz(14px, 20px);
+    @include xs {
+        text-align: center;
+    }
 }

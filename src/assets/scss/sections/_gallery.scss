@@ -1,0 +1,36 @@
+.b-gallery {
+    position: relative;
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b-gallery__content {
+    position: relative;
+}
+
+.b-gallery__title {}
+
+.b-gallery__tabs {
+    position: relative;
+}
+
+.b-gallery__tab {
+    &:not(:first-child) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    transition: $transition;
+    opacity: 0;
+    pointer-events: none;
+    &.active {
+        opacity: 1;
+        pointer-events: fill;
+    }
+    &:not(.active) {
+        transform: translate3d(0, 75px, 0);
+    }
+}

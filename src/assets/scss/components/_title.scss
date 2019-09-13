@@ -1,5 +1,18 @@
 .b-title {
     font-weight: 300;
+    @include xs {
+        text-align: center;
+        & .b-title__value {
+            &:before {
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
+            }
+            &:after {
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+    }
 }
 
 .b-title_light {
@@ -68,6 +81,10 @@
     text-align: center;
     & .b-title__value {
         &:before {
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+        }
+        &:after {
             left: 50%;
             transform: translate3d(-50%, 0, 0);
         }

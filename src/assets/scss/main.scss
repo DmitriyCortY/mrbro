@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: $firstFont;
+    outline: none;
 }
 
 .b-page {
@@ -23,7 +24,9 @@
 
 a {
     text-decoration: none;
-    transition: $transition;
+    &:not(.slick-slide) {
+        transition: $transition;
+    }
 }
 
 a:hover {

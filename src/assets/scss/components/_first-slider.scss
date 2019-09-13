@@ -3,14 +3,25 @@
 }
 
 .b-first-slider__inner {
-    width: 100%;
+    width: calc(100% + 30px);
     @include flex-row;
     margin: -15px;
+    @include sm {
+        flex-direction: column-reverse;
+    }
 }
 
 .b-first-slider__arrows {
     margin: 15px;
-    width: calc(((100% / 8) * 1) - 30px);
+    width: 100px;
+    @include lg {
+        width: 70px;
+    }
+    @include col-sm(12);
+    @include sm {
+        @include flex-row;
+        @include flex-center;
+    }
 }
 
 .b-first-slider__arrow {
@@ -61,13 +72,22 @@
     }
     &:not(:last-child) {
         margin-bottom: 30px;
+        @include sm {
+            margin-bottom: 0;
+            margin-right: 30px;
+        }
+    }
+    @include sm {
+        padding-bottom: 0;
+        width: 80px;
+        height: 80px;
     }
 }
 
 .b-first-slider__arrow_prew {
     &:not(.slick-disabled):hover {
         & i {
-            transform: translate3d(calc(-50% + 5px), -50%, 0);
+            transform: translate3d(calc(-50% - 5px), -50%, 0);
         }
     }
 }
@@ -82,8 +102,12 @@
 
 .b-first-slider__list {
     margin: 15px;
-    width: calc(((100% / 8) * 7) - 30px);
     position: relative;
+    width: calc(((100% - 100px)) - 60px);
+    @include lg {
+        width: calc(((100% - 70px)) - 60px);
+    }
+    @include col-sm(12);
 }
 
 .b-first-slider__slide {
@@ -102,22 +126,30 @@
 .b-first-slider-slide__content {
     @include flex-row;
     @include row;
+    @include mobile {
+        flex-direction: column-reverse;
+    }
 }
 
 .b-first-slider-slide__col-left {
     margin: 15px;
     width: calc(((100% / 8) * 4) - 30px);
+    @include col-mobile(12);
 }
 
 .b-first-slider-slide__col-right {
     margin: 15px;
     width: calc(((100% / 8) * 4) - 30px);
+    @include col-mobile(12);
 }
 
 .b-first-slider-slide__item {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    @include sm {
+        max-width: 100%;
+    }
 }
 
 .b-first-slider-slide__text {
@@ -125,6 +157,9 @@
     @include fz(18px, 30px);
     font-weight: 200;
     max-width: 400px;
+    @include mobile {
+        text-align: center;
+    }
 }
 
 .b-first-slider-slide__button {

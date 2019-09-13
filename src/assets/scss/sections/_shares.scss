@@ -11,5 +11,9 @@
 
 .b-shares__slider {
     @include col(9);
+    @include col-lg(12);
     @include offset-left(1);
+    @include lg {
+        margin: 15px;
+    }
 }

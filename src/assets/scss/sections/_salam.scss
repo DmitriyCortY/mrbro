@@ -8,10 +8,15 @@
     max-width: 920px;
     margin-left: auto;
     margin-right: 5vw;
+    @include xs {
+        margin-right: auto;
+    }
 }
 
 .b-salam__text {
     font-weight: 100;
+    font-size: 14px;
+    line-height: 22px;
     & p {
         @include inh;
         margin: 0;
@@ -21,11 +26,15 @@
     max-width: 920px;
     margin-left: auto;
     margin-right: 5vw;
+    @include xs {
+        text-align: center;
+        margin-right: auto;
+    }
 }
 
 .b-salam__iamge {
     position: absolute;
-    right: 50%;
+    right: calc(((50% / 2) + 370px));
     top: 50%;
     transform: translate3d(-100%, -50%, 0);
     max-width: 350px;

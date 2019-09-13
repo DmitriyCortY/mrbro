@@ -15,5 +15,9 @@
     @include col-md(4);
     @include col-sm(6);
     @include col-xs(10);
+    @include xs {
+        margin-left: auto;
+        margin-right: auto;
+    }
     @include col-mobile(12);
 }

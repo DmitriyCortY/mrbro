@@ -10,6 +10,9 @@
 .b-cover__content {
     position: relative;
     margin-top: 190px;
+    @include xs {
+        margin-top: 120px;
+    }
 }
 
 .b-cover__content_small {
@@ -29,10 +32,19 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    @include md {
+        margin-top: 120px;
+    }
+    @include xs {
+        margin-top: 80px;
+    }
 }
 
 .b-cover__logo {
     margin-bottom: 80px;
+    @include xs {
+        margin-bottom: 35px;
+    }
 }
 
 .b-cover__menu {
@@ -52,6 +64,11 @@
 
 .b-cover__row_flex {
     @include flex-row;
+    @include md {
+        @include flex-colm;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .b-cover__row_ai-end {
@@ -68,6 +85,15 @@
 
 .b-cover__title {
     margin-right: 15px;
+    @include md {
+        margin-bottom: 30px;
+        margin-right: 0;
+        text-align: center;
+        &:before {
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
 }
 
 .b-cover__button {
@@ -75,11 +101,14 @@
     width: 100%;
     display: block;
     margin-left: auto;
+    @include md {
+        margin-right: auto;
+    }
 }
 
 .b-cover__footer-col {
     @include col(3);
-    @include col-md(4);
+    @include col-md(12);
     position: relative;
     &:first-child {
         margin-right: auto;
@@ -92,6 +121,10 @@
             color: #f2e9a6;
         }
     }
+    @include md {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .b-cover__footer-title {
@@ -99,6 +132,9 @@
     margin-bottom: 14px;
     color: #fefefe;
     transition: $transition;
+    @include md {
+        text-align: center;
+    }
 }
 
 .b-cover__footer-separator {
@@ -107,6 +143,10 @@
     width: 40px;
     margin-bottom: 14px;
     transition: $transition;
+    @include md {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .b-cover__footer-text {
@@ -124,6 +164,9 @@
             color: #f2e9a6;
         }
     }
+    @include md {
+        text-align: center;
+    }
 }
 
 .b-cover__socials {
@@ -133,6 +176,17 @@
     transform: translate3d(-100%, -50%, 0);
     padding: 30px;
     @include flex-colm;
+    @include md {
+        position: relative;
+        top: unset;
+        left: unset;
+        text-align: center;
+        width: 100%;
+        transform: none;
+        @include flex-row;
+        @include flex-center;
+        padding-top: 0;
+    }
 }
 
 .b-cover__social {
@@ -146,5 +200,12 @@
     }
     &:not(:last-child) {
         margin-bottom: 20px;
+        @include md {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+    @include md {
+        opacity: 1;
     }
 }
