@@ -8,7 +8,7 @@
 <script src="./assets/js/main.js"></script>
 
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
 
         var tabs = new TABS({
             trigger: $('[data-tab-trigger]'), // jQuery.object
@@ -22,7 +22,7 @@
             for (var i = 0; i < $('.b-form').length; i++) {
                 $('.b-form').eq(i).materialForm();
                 $('.b-form').eq(i).validate({
-                    errorPlacement: function(error, element) {}
+                    errorPlacement: function (error, element) {}
                 });
             }
         }
@@ -126,10 +126,10 @@
             }
         }
         initSliders()
-            // --- Инициализация слайдеров slick-slider ---
+        // --- Инициализация слайдеров slick-slider ---
         $('[data-gallery-tab-trigger="0"]').addClass('active')
         $('[data-gallery-tab="0"]').addClass('active')
-        $('[data-gallery-tab-trigger]').on('click', function(e) {
+        $('[data-gallery-tab-trigger]').on('click', function (e) {
             var index = $(e.currentTarget).attr('data-gallery-tab-trigger')
             $('[data-gallery-tab]').removeClass('active')
             $('[data-gallery-tab-trigger]').removeClass('active')
@@ -149,7 +149,7 @@
         let bgAnim = new ScrollBlockAnimBg()
         bgAnim.init(bgImagesSrc[0])
         var _c_ = 0
-        setInterval(function() {
+        setInterval(function () {
             bgAnim.next(bgImagesSrc[_c_])
             if (_c_ < bgImagesSrc.length) {
                 _c_++
